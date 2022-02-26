@@ -1,2 +1,3 @@
 (test
- (name ocaml_flow_sdk))
+ (name test_ocaml_flow_sdk)
+ (libraries ocaml_flow_sdk))

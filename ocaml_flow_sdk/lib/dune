@@ -1,4 +1,4 @@
 (library
- (public_name ocaml_flow_sdk)
  (name ocaml_flow_sdk)
- (libraries ocaml-protoc))
+ (public_name ocaml_flow_sdk)
+ (libraries ocaml-protoc eio lwt cohttp-lwt-unix cohttp-lwt))
