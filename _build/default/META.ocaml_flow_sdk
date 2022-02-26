@@ -1,6 +1,0 @@
-description = ""
-requires = ""
-archive(byte) = "ocaml_flow_sdk.cma"
-archive(native) = "ocaml_flow_sdk.cmxa"
-plugin(byte) = "ocaml_flow_sdk.cma"
-plugin(native) = "ocaml_flow_sdk.cmxs"
