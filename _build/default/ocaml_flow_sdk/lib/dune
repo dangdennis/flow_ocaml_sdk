@@ -1,0 +1,3 @@
+(library
+ (public_name ocaml_flow_sdk)
+ (name ocaml_flow_sdk))

@@ -1,2 +1,127 @@
-# dune init proj --kind=lib ocaml_flow_sdk
+# dune build
 # OCAMLPARAM: unset
+# Workspace root: /Users/dennisdang/Desktop/ocaml-flow-sdk
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/xs/dprth0h1207bnbtvz6ljkqg00000gn/T/dune2d0620.output 2> /dev/null
+# Auto-detected concurrency: 16
+# disable binary cache
+$ /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlc.opt -config > /var/folders/xs/dprth0h1207bnbtvz6ljkqg00000gn/T/dune9c1e87.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path =
+#      Some External "/Users/dennisdang/.opam/4.12.0+domains/lib/toplevel"
+#  ; ocaml_bin = External "/Users/dennisdang/.opam/4.12.0+domains/bin"
+#  ; ocaml = Ok External "/Users/dennisdang/.opam/4.12.0+domains/bin/ocaml"
+#  ; ocamlc = External "/Users/dennisdang/.opam/4.12.0+domains/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok External "/Users/dennisdang/.opam/4.12.0+domains/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok External "/Users/dennisdang/.opam/4.12.0+domains/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/Users/dennisdang/.opam/4.12.0+domains/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" :
+#            "/Users/dennisdang/.opam/4.12.0+domains/lib"
+#        ; "DUNE_OCAML_STDLIB" :
+#            "/Users/dennisdang/.opam/4.12.0+domains/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/Users/dennisdang/Desktop/ocaml-flow-sdk"
+#        ; "INSIDE_DUNE" :
+#            "/Users/dennisdang/Desktop/ocaml-flow-sdk/_build/default"
+#        ; "MANPATH" :
+#            "/Users/dennisdang/Desktop/ocaml-flow-sdk/_build/install/default/bin"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/dennisdang/Desktop/ocaml-flow-sdk/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/dennisdang/Desktop/ocaml-flow-sdk/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/dennisdang/Desktop/ocaml-flow-sdk/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/Users/dennisdang/.opam/4.12.0+domains/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.12.0+domains"
+#      ; standard_library_default =
+#          "/Users/dennisdang/.opam/4.12.0+domains/lib/ocaml"
+#      ; standard_library = "/Users/dennisdang/.opam/4.12.0+domains/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "clang"; "-arch"; "x86_64"; "-Wno-trigraphs"; "-c" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-apple-darwin20.6.0"
+#      ; target = "x86_64-apple-darwin20.6.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X029"
+#      ; cmi_magic_number = "Caml1999I029"
+#      ; cmo_magic_number = "Caml1999O029"
+#      ; cma_magic_number = "Caml1999A029"
+#      ; cmx_magic_number = "Caml1999Y029"
+#      ; cmxa_magic_number = "Caml1999Z029"
+#      ; ast_impl_magic_number = "Caml1999M029"
+#      ; ast_intf_magic_number = "Caml1999N029"
+#      ; cmxs_magic_number = "Caml1999D029"
+#      ; cmt_magic_number = "Caml1999T029"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -bin-annot -I ocaml_flow_sdk/lib/.ocaml_flow_sdk.objs/byte -no-alias-deps -opaque -o ocaml_flow_sdk/lib/.ocaml_flow_sdk.objs/byte/ocaml_flow_sdk.cmo -c -impl ocaml_flow_sdk/lib/ocaml_flow_sdk.ml-gen)
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I ocaml_flow_sdk/test/.ocaml_flow_sdk.eobjs/byte -no-alias-deps -opaque -o ocaml_flow_sdk/test/.ocaml_flow_sdk.eobjs/byte/dune__exe__Ocaml_flow_sdk.cmo -c -impl ocaml_flow_sdk/test/ocaml_flow_sdk.ml)
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o ocaml_flow_sdk/lib/ocaml_flow_sdk.cma ocaml_flow_sdk/lib/.ocaml_flow_sdk.objs/byte/ocaml_flow_sdk.cmo)
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o ocaml_flow_sdk/test/ocaml_flow_sdk.bc ocaml_flow_sdk/test/.ocaml_flow_sdk.eobjs/byte/dune__exe__Ocaml_flow_sdk.cmo)
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I ocaml_flow_sdk/test/.ocaml_flow_sdk.eobjs/byte -I ocaml_flow_sdk/test/.ocaml_flow_sdk.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -o ocaml_flow_sdk/test/.ocaml_flow_sdk.eobjs/native/dune__exe__Ocaml_flow_sdk.cmx -c -impl ocaml_flow_sdk/test/ocaml_flow_sdk.ml)
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -I ocaml_flow_sdk/lib/.ocaml_flow_sdk.objs/byte -I ocaml_flow_sdk/lib/.ocaml_flow_sdk.objs/native -intf-suffix .ml-gen -no-alias-deps -opaque -o ocaml_flow_sdk/lib/.ocaml_flow_sdk.objs/native/ocaml_flow_sdk.cmx -c -impl ocaml_flow_sdk/lib/ocaml_flow_sdk.ml-gen)
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o ocaml_flow_sdk/lib/ocaml_flow_sdk.cmxa ocaml_flow_sdk/lib/.ocaml_flow_sdk.objs/native/ocaml_flow_sdk.cmx)
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I ocaml_flow_sdk/lib -o ocaml_flow_sdk/lib/ocaml_flow_sdk.cmxs ocaml_flow_sdk/lib/ocaml_flow_sdk.cmxa)
+$ (cd _build/default && /Users/dennisdang/.opam/4.12.0+domains/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o ocaml_flow_sdk/test/ocaml_flow_sdk.exe ocaml_flow_sdk/test/.ocaml_flow_sdk.eobjs/native/dune__exe__Ocaml_flow_sdk.cmx)

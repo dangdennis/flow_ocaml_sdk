@@ -1,0 +1,20 @@
+(lang dune 2.9)
+(name ocaml_flow_sdk)
+(library
+ (name ocaml_flow_sdk)
+ (kind normal)
+ (archives (byte ocaml_flow_sdk.cma) (native ocaml_flow_sdk.cmxa))
+ (plugins (byte ocaml_flow_sdk.cma) (native ocaml_flow_sdk.cmxs))
+ (native_archives ocaml_flow_sdk.a)
+ (main_module_name Ocaml_flow_sdk)
+ (modes byte native)
+ (modules
+  (wrapped
+   (main_module_name Ocaml_flow_sdk)
+   (alias_module
+    (name Ocaml_flow_sdk)
+    (obj_name ocaml_flow_sdk)
+    (visibility public)
+    (kind alias)
+    (impl))
+   (wrapped true))))
