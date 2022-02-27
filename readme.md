@@ -1,6 +1,3 @@
-# Flow blockchain OCaml SDK
+# OCaml Flow SDK
 
-Build ml types from proto file
-```
-ocaml-protoc -binary -ml_out ocaml_flow_sdk proto/flow.proto
-```
+An OCaml SDK for the [Flow HTTP API](https://docs.onflow.org/http-api/)

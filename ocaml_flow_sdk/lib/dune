@@ -1,4 +1,6 @@
 (library
  (name ocaml_flow_sdk)
  (public_name ocaml_flow_sdk)
- (libraries ocaml-protoc eio lwt cohttp-lwt-unix cohttp-lwt tls))
+ (libraries lwt cohttp-lwt-unix cohttp-lwt tls)
+ (preprocess
+  (pps lwt_ppx)))
