@@ -1,0 +1,16 @@
+{
+  "name": "ocaml_flow_sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "openapi-generator-cli generate -i access.yaml -g ocaml -o ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "2.4.26"
+  }
+}
