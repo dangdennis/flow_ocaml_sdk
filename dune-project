@@ -1,2 +1,2 @@
 (lang dune 1.10)
-(name openapi)
+(name flow_ocaml_sdk)
