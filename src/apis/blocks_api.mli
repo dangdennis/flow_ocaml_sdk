@@ -6,4 +6,4 @@
  *)
 
 val blocks_get : ?height:Block_height.t list -> ?start_height:Block_height.t -> ?end_height:Block_height.t -> ?expand:string list -> ?select:string list -> unit -> Block.t list Lwt.t
-val blocks_id_get : id:string list -> ?expand:string list -> ?select:string list -> unit -> Block.t list Lwt.t
+val blocks_id_get : id:string -> ?expand:string list -> ?select:string list -> unit -> Block.t list Lwt.t

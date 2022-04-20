@@ -9,9 +9,9 @@ let blocks_get ?(height = []) ?start_height ?end_height ?(expand = []) ?(select 
     let open Lwt in
     let uri = Request.build_uri "/blocks" in
     let headers = Request.default_headers in
-    let uri = Request.add_query_param_list uri "height" (List.map .show) height in
-    let uri = Request.maybe_add_query_param uri "start_height" .show start_height in
-    let uri = Request.maybe_add_query_param uri "end_height" .show end_height in
+    let uri = Request.add_query_param_list uri "height" (List.map string_of_int) height in
+    let uri = Request.maybe_add_query_param uri "start_height" string_of_int start_height in
+    let uri = Request.maybe_add_query_param uri "end_height" string_of_int end_height in
     let uri = Request.add_query_param_list uri "expand" (List.map (fun x -> x)) expand in
     let uri = Request.add_query_param_list uri "select" (List.map (fun x -> x)) select in
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->
@@ -21,7 +21,7 @@ let blocks_id_get ~id ?(expand = []) ?(select = []) () =
     let open Lwt in
     let uri = Request.build_uri "/blocks/{id}" in
     let headers = Request.default_headers in
-    let uri = Request.replace_path_param uri "id" (List.map (fun x -> x)) id in
+    let uri = Request.replace_path_param uri "id" (fun x -> x) id in
     let uri = Request.add_query_param_list uri "expand" (List.map (fun x -> x)) expand in
     let uri = Request.add_query_param_list uri "select" (List.map (fun x -> x)) select in
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->

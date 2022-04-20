@@ -10,8 +10,8 @@ let events_get ~_type ?start_height ?end_height ?(block_ids = []) ?(select = [])
     let uri = Request.build_uri "/events" in
     let headers = Request.default_headers in
     let uri = Request.add_query_param uri "type" (fun x -> x) _type in
-    let uri = Request.maybe_add_query_param uri "start_height" .show start_height in
-    let uri = Request.maybe_add_query_param uri "end_height" .show end_height in
+    let uri = Request.maybe_add_query_param uri "start_height" string_of_int start_height in
+    let uri = Request.maybe_add_query_param uri "end_height" string_of_int end_height in
     let uri = Request.add_query_param_list uri "block_ids" (List.map (fun x -> x)) block_ids in
     let uri = Request.add_query_param_list uri "select" (List.map (fun x -> x)) select in
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->

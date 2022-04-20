@@ -10,7 +10,7 @@ let accounts_address_get ~address ?block_height () =
     let uri = Request.build_uri "/accounts/{address}" in
     let headers = Request.default_headers in
     let uri = Request.replace_path_param uri "address" (fun x -> x) address in
-    let uri = Request.maybe_add_query_param uri "block_height" .show block_height in
+    let uri = Request.maybe_add_query_param uri "block_height" string_of_int block_height in
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->
     Request.read_json_body_as (JsonSupport.unwrap Account.of_yojson) resp body
 

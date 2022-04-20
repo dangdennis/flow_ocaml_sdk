@@ -23,4 +23,5 @@ dune build
 
 ## Getting Started
 
-TODO
+I had to manually patch Block_height.t because the generator creates an empty record, an illegal declaration in OCaml.
+Because I forced Block_height.t to be a no-op int, necessary places where block_height is used as a string or string list had to be forced to just a single string. I hope to fix this.

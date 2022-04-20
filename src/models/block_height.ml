@@ -5,9 +5,6 @@
  *
  *)
 
-type t = {
-} [@@deriving yojson { strict = false }, show ];;
+type t = int [@@deriving yojson { strict = false }, show ];;
 
-let create () : t = {
-}
-
+let create () : t = 0
