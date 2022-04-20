@@ -5,9 +5,9 @@
  *
  *)
 
-let blocks_get ?(height = []) ?start_height ?end_height ?(expand = []) ?(select = []) () =
+let blocks_get ?(height = []) ?start_height ?end_height ?(expand = []) ?(select = []) ?(network = Network.Testnet) () =
     let open Lwt in
-    let uri = Request.build_uri "/blocks" in
+    let uri = Request.build_uri "/blocks" ~network () in
     let headers = Request.default_headers in
     let uri = Request.add_query_param_list uri "height" (List.map string_of_int) height in
     let uri = Request.maybe_add_query_param uri "start_height" string_of_int start_height in
@@ -17,9 +17,9 @@ let blocks_get ?(height = []) ?start_height ?end_height ?(expand = []) ?(select 
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->
     Request.read_json_body_as_list_of (JsonSupport.unwrap Block.of_yojson) resp body
 
-let blocks_id_get ~id ?(expand = []) ?(select = []) () =
+let blocks_id_get ~id ?(expand = []) ?(select = []) ?(network = Network.Testnet) () =
     let open Lwt in
-    let uri = Request.build_uri "/blocks/{id}" in
+    let uri = Request.build_uri "/blocks/{id}" ~network () in
     let headers = Request.default_headers in
     let uri = Request.replace_path_param uri "id" (fun x -> x) id in
     let uri = Request.add_query_param_list uri "expand" (List.map (fun x -> x)) expand in

@@ -5,17 +5,17 @@
  *
  *)
 
-let execution_results_get ~block_id =
+let execution_results_get ~block_id ?(network = Network.Testnet) () =
     let open Lwt in
-    let uri = Request.build_uri "/execution_results" in
+    let uri = Request.build_uri "/execution_results" ~network () in
     let headers = Request.default_headers in
     let uri = Request.add_query_param_list uri "block_id" (List.map (fun x -> x)) block_id in
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->
     Request.read_json_body_as_list_of (JsonSupport.unwrap Execution_result.of_yojson) resp body
 
-let execution_results_id_get ~id =
+let execution_results_id_get ~id ?(network = Network.Testnet) () =
     let open Lwt in
-    let uri = Request.build_uri "/execution_results/{id}" in
+    let uri = Request.build_uri "/execution_results/{id}" ~network () in
     let headers = Request.default_headers in
     let uri = Request.replace_path_param uri "id" (fun x -> x) id in
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->

@@ -5,9 +5,9 @@
  *
  *)
 
-let scripts_post ~inline_object_1_t ?block_id ?block_height () =
+let scripts_post ~inline_object_1_t ?block_id ?block_height ?(network = Network.Testnet) () =
     let open Lwt in
-    let uri = Request.build_uri "/scripts" in
+    let uri = Request.build_uri "/scripts" ~network () in
     let headers = Request.default_headers in
     let uri = Request.maybe_add_query_param uri "block_id" (fun x -> x) block_id in
     let uri = Request.maybe_add_query_param uri "block_height" string_of_int block_height in

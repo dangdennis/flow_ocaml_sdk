@@ -1,5 +1,4 @@
 let api_key = ""
-let base_url = "https://rest-canary.onflow.org/v1"
 let default_headers = Cohttp.Header.init_with "Content-Type" "application/json"
 
 let option_fold f default o =
@@ -7,7 +6,17 @@ let option_fold f default o =
   | Some v -> f v
   | None -> default
 
-let build_uri operation_path = Uri.of_string (base_url ^ operation_path)
+let build_uri operation_path ?network () = 
+  match network with
+    | None -> Uri.of_string (Network.testnet ^ operation_path)
+    | Some net -> 
+        match net with
+        | Network.Testnet -> Uri.of_string ((Testnet |> Network.toString) ^ operation_path)
+        | Mainnet -> Uri.of_string ((Mainnet |> Network.toString) ^ operation_path)
+        | Emulator -> Uri.of_string ((Emulator |> Network.toString) ^ operation_path)
+        | Custom url -> Uri.of_string (url ^ operation_path)
+
+   
 
 let add_string_header headers key value =
   Cohttp.Header.add headers key value

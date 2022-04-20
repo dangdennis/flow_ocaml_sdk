@@ -5,9 +5,9 @@
  *
  *)
 
-let accounts_address_get ~address ?block_height () =
+let accounts_address_get ~address ?block_height ?(network = Network.Testnet) () =
     let open Lwt in
-    let uri = Request.build_uri "/accounts/{address}" in
+    let uri = Request.build_uri "/accounts/{address}" ~network () in
     let headers = Request.default_headers in
     let uri = Request.replace_path_param uri "address" (fun x -> x) address in
     let uri = Request.maybe_add_query_param uri "block_height" string_of_int block_height in

@@ -5,9 +5,9 @@
  *
  *)
 
-let events_get ~_type ?start_height ?end_height ?(block_ids = []) ?(select = []) () =
+let events_get ~_type ?start_height ?end_height ?(block_ids = []) ?(select = []) ?(network = Network.Testnet) () =
     let open Lwt in
-    let uri = Request.build_uri "/events" in
+    let uri = Request.build_uri "/events" ~network () in
     let headers = Request.default_headers in
     let uri = Request.add_query_param uri "type" (fun x -> x) _type in
     let uri = Request.maybe_add_query_param uri "start_height" string_of_int start_height in

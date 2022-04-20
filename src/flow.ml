@@ -1,27 +1,3 @@
-
-
-module Network = struct 
-let canary = "https://rest-canary.onflow.org/v1/"
-let testnet = "https://rest-testnet.onflow.org/v1"
-let mainnet = "https://rest-mainnet.onflow.org/v1"
-
-type t = 
-| Canary
-| Testnet
-| Mainnet
-| Custom of string
-
-let toString t =
-  match t with
-    | Canary ->  canary
-    | Testnet -> testnet
-    | Mainnet -> mainnet
-    | Custom url -> url
-  
-end
-
-
-
 module Blocks = struct
   let get_by_height = Blocks_api.blocks_get
   let get_by_id = Blocks_api.blocks_id_get
