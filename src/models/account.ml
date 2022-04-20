@@ -10,8 +10,8 @@ type t = {
     address: string;
     (* Flow balance of the account. *)
     balance: string;
-    keys: Account_public_key.t list;
-    contracts: (string * string) list;
+    keys: Account_public_key.t list option [@default None];
+    contracts: (string * string) list option [@default None];
     _expandable: Account__expandable.t;
     _links: Links.t option [@default None];
 } [@@deriving yojson { strict = false }, show ];;
@@ -19,8 +19,8 @@ type t = {
 let create (address : string) (balance : string) (_expandable : Account__expandable.t) : t = {
     address = address;
     balance = balance;
-    keys = [];
-    contracts = [];
+    keys = Some [];
+    contracts = Some [];
     _expandable = _expandable;
     _links = None;
 }

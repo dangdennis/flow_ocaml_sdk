@@ -3,7 +3,7 @@
    (name flow_ocaml_sdk)
    (public_name flow_ocaml_sdk)
    (flags (:standard -w -27))
-   (libraries str cohttp-lwt-unix lwt yojson ppx_deriving_yojson.runtime)
+   (libraries str cohttp-lwt-unix lwt yojson ppx_deriving_yojson.runtime tls)
    (preprocess (pps ppx_deriving_yojson ppx_deriving.std))
    (wrapped true)
 )
