@@ -1,7 +1,8 @@
 (tests
  (names 
-  block_tests 
-  account_tests
-  collection_tests
-  event_tests)
+  blocks_test 
+  accounts_test
+  collections_test
+  events_test
+  scripts_test)
  (libraries alcotest alcotest-lwt lwt lwt.unix flow_ocaml_sdk))

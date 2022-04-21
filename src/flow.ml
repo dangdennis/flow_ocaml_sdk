@@ -24,7 +24,7 @@ module Accounts = struct
 end
 
 module Scripts = struct
-  let execute_script = Scripts_api.scripts_post
+  let send_script = Scripts_api.scripts_post
 end
 
 module Events = struct
