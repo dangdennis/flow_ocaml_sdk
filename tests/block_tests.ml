@@ -1,20 +1,17 @@
 open Flow_ocaml_sdk
+open Lwt.Infix
 
-  let test_get_by_heights _ () = 
-      Lwt.bind (Flow.Blocks.get_by_height ~height:[66494830] ~network:Testnet ()) 
-          (fun blocks -> 
-            let () = blocks |> List.iter (fun (b: Block.t) -> 
-              let _ = Alcotest.(check string) "same height" "66494830" b.header.height in
-              ()
-              ) 
-            in 
-            Lwt.return_unit) 
+let test_get_by_heights _ () = 
+  Flow.Blocks.get_by_height ~height:[66494830] ~network:Testnet () >|=
+    (fun blocks -> 
+      blocks |> List.iter (fun (b: Block.t) -> 
+        Alcotest.(check string) "same height" "66494830" b.header.height))
 
 
 let () =
   let open Alcotest_lwt in
   Lwt_main.run
-  @@ run "blocks" ~verbose:true
+  @@ run "blocks"
        [
          ( "blocks",
            [
