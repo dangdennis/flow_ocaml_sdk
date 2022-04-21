@@ -1,3 +1,0 @@
-(test
- (name test)
- (libraries flow_ocaml_sdk))
